@@ -65,15 +65,19 @@ function getPossition(){
   
   function error(err) {
     console.warn(`ERROR(${err.code}): ${err.message}`);
-    showWeather('q=London');
   };
   
   navigator.geolocation.getCurrentPosition(success, error, options);
 }
-
+showWeather('q=London');
 getPossition();
 const clickElem = document.querySelector('#btn1').addEventListener('click', function () {
-  showWeather('q=' + document.querySelector('#searchFild').value);
+  
+  if(!document.querySelector('#searchFild').value){
+    getPossition();
+  }else{
+    showWeather('q=' + document.querySelector('#searchFild').value);
+  }
 });;
 
 
