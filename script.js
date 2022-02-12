@@ -1,9 +1,9 @@
 function setWindWay(deg) {
-  if (deg > 315 && deg < 45) return 'North';
+  if (deg > 315 ) return 'North';
   if (deg > 45 && deg < 135) return 'East';
   if (deg > 135 && deg < 225) return 'South';
   if (deg > 225 && deg < 315) return 'West'
-  if (deg == 0) return "North";
+  if (deg < 45) return "North";
 
 }
 function setDay() {
@@ -24,6 +24,7 @@ function showWeather(cityName, lat, lon) {
   fetch('https://api.openweathermap.org/data/2.5/weather?' + cityName + '&units=metric&appid=e15d7e3b5ce1d716d9794bbce41655df')
     .then(reception => reception.json())
     .then(data => {
+      console.log(data)
       document.querySelector('.location').innerHTML = data.name;
       document.querySelector('.num').innerHTML = Math.round(data.main.temp) + '&deg';
       document.querySelector('.humidity').innerHTML = data.main.humidity + '%';
