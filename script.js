@@ -12,9 +12,10 @@ function setDay() {
   document.querySelector('.dayToday').innerHTML = day[d.getDay()];
   let i2 = d.getDay() + 1;
   for (let i = 2; i <= 7; i++) {
+    console.log(i,i2)
+    if (i2 == 7) i2 = 0;
     document.querySelector('.day' + i).innerHTML = day[i2];
     i2++;
-    if (i2 == 7) i2 = 0;
   }
 }
 
