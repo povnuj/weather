@@ -1,4 +1,4 @@
-function windWay(deg) {
+function setWindWay(deg) {
   if (deg > 315 && deg < 45) return 'North';
   if (deg > 45 && deg < 135) return 'East';
   if (deg > 135 && deg < 225) return 'South';
@@ -28,7 +28,7 @@ function showWeather(cityName, lat, lon) {
       document.querySelector('.num').innerHTML = Math.round(data.main.temp) + '&deg';
       document.querySelector('.humidity').innerHTML = data.main.humidity + '%';
       document.querySelector('.wind').innerHTML = data.wind.speed;
-      document.querySelector('.windDeg').innerHTML = windWay(data.wind.deg);
+      document.querySelector('.windDeg').innerHTML = setWindWay(data.wind.deg);
       document.querySelector('.clouds').innerHTML = `<img src="https://openweathermap.org/img/wn/${data.weather[0]['icon']}@2x.png">`;
       // Next Day load
       fetch('https://api.openweathermap.org/data/2.5/onecall?lat=' + data.coord.lat + '&lon='+ data.coord.lon +'&units=metric&appid=e15d7e3b5ce1d716d9794bbce41655df')
