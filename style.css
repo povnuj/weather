@@ -1267,8 +1267,8 @@ form textarea {
           float: right; }
       .forecast-container .forecast.today .forecast-content {
         text-align: left;
-        padding-top: 30px;
-        padding-bottom: 30px; }
+        padding: 30px 0 30px 20px;
+        }
       .forecast-container .forecast.today .location {
         font-size: 18px;
         font-size: 1.2857142857em;
@@ -1297,7 +1297,7 @@ form textarea {
     .forecast-container .forecast .forecast-icon {
       height: 50px; }
     .forecast-container .forecast .forecast-content {
-      padding: 50px 20px 10px;
+      padding: 50px 0 0;
       text-align: center; }
       .forecast-container .forecast .forecast-content .forecast-icon {
         margin-bottom: 20px; }
